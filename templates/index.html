@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Financial Tool</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+  <div class="container text-center mt-5">
+    <h1 class="mb-4">AI Financial Tool</h1>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+          <h4>Stock Price Prediction</h4>
+          <form method="POST" action="/stock">
+            <input type="text" name="ticker" class="form-control mb-3" placeholder="Enter Stock Ticker" required />
+            <button type="submit" class="btn btn-primary w-100">Predict</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+          <h4>FD Calculator</h4>
+          <form method="POST" action="/fd">
+            <input type="number" name="principal" class="form-control mb-2" placeholder="Principal Amount" required />
+            <input type="number" name="rate" class="form-control mb-2" placeholder="Rate of Interest (%)" required />
+            <input type="number" name="time" class="form-control mb-3" placeholder="Time Period (years)" required />
+            <button type="submit" class="btn btn-success w-100">Calculate FD</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+          <h4>EMI Calculator</h4>
+          <form method="POST" action="/emi">
+            <input type="number" name="loan" class="form-control mb-2" placeholder="Loan Amount" required />
+            <input type="number" name="rate" class="form-control mb-2" placeholder="Interest Rate (%)" required />
+            <input type="number" name="time" class="form-control mb-3" placeholder="Time Period (months)" required />
+            <button type="submit" class="btn btn-warning w-100">Calculate EMI</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+          <h4>Credit Score Checker</h4>
+          <form method="POST" action="/credit">
+            <input type="number" name="score" class="form-control mb-3" placeholder="Enter Credit Score" required />
+            <button type="submit" class="btn btn-danger w-100">Check</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
