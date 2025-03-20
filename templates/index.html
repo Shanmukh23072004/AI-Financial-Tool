@@ -13,15 +13,6 @@
     <div class="row g-4">
       <div class="col-md-6">
         <div class="card p-4 shadow-sm">
-          <h4>Stock Price Prediction</h4>
-          <form method="POST" action="/stock">
-            <input type="text" name="ticker" class="form-control mb-3" placeholder="Enter Stock Ticker" required />
-            <button type="submit" class="btn btn-primary w-100">Predict</button>
-          </form>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card p-4 shadow-sm">
           <h4>FD Calculator</h4>
           <form method="POST" action="/fd">
             <input type="number" name="principal" class="form-control mb-2" placeholder="Principal Amount" required />
@@ -39,6 +30,15 @@
             <input type="number" name="rate" class="form-control mb-2" placeholder="Interest Rate (%)" required />
             <input type="number" name="time" class="form-control mb-3" placeholder="Time Period (months)" required />
             <button type="submit" class="btn btn-warning w-100">Calculate EMI</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card p-4 shadow-sm">
+          <h4>Stock Price Prediction</h4>
+          <form method="POST" action="/stock">
+            <input type="text" name="ticker" class="form-control mb-3" placeholder="Enter Stock Ticker" required />
+            <button type="submit" class="btn btn-primary w-100">Predict</button>
           </form>
         </div>
       </div>
