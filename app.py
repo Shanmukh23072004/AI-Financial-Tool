@@ -1,9 +1,16 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 04e1373be1d8673aff572c25906189c1b1edd69c
 from flask import Flask, render_template, request
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+<<<<<<< HEAD
 import yfinance as yf
 import os
+=======
+>>>>>>> 04e1373be1d8673aff572c25906189c1b1edd69c
 
 app = Flask(__name__)
 
@@ -11,6 +18,19 @@ app = Flask(__name__)
 def home():
     return render_template('index.html')
 
+<<<<<<< HEAD
+=======
+@app.route('/stock', methods=['POST'])
+def stock():
+    ticker = request.form['ticker']
+    plt.figure(figsize=(8,4))
+    plt.plot([1,2,3,4], [10,20,30,40])  # Dummy plot
+    plt.title(f'Stock Prediction for {ticker}')
+    plt.savefig('static/images/stock.png')
+    plt.close()
+    return render_template('result.html', result=f'Stock prediction for {ticker}', image='images/stock.png')
+
+>>>>>>> 04e1373be1d8673aff572c25906189c1b1edd69c
 @app.route('/fd', methods=['POST'])
 def fd():
     principal = float(request.form['principal'])
@@ -27,6 +47,7 @@ def emi():
     emi = (loan * rate * ((1 + rate) ** time)) / (((1 + rate) ** time) - 1)
     return render_template('result.html', result=f"Monthly EMI: ₹{emi:.2f}")
 
+<<<<<<< HEAD
 @app.route('/stock', methods=['POST'])
 def stock():
     ticker = request.form['ticker']
@@ -48,6 +69,8 @@ def stock():
 
     return render_template('result.html', result=f'Stock Price Chart for {ticker.upper()}', image='images/stock.png')
 
+=======
+>>>>>>> 04e1373be1d8673aff572c25906189c1b1edd69c
 @app.route('/credit', methods=['POST'])
 def credit():
     score = int(request.form['score'])
@@ -56,4 +79,7 @@ def credit():
 
 if __name__ == '__main__':
     app.run(debug=True)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 04e1373be1d8673aff572c25906189c1b1edd69c
