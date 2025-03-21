@@ -1,8 +1,5 @@
 
 Flask
 matplotlib
-<<<<<<< HEAD
 yfinance
-=======
 gunicorn
->>>>>>> 04e1373be1d8673aff572c25906189c1b1edd69c
