@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,14 +9,38 @@
 <body class="bg-light text-center mt-5">
   <div class="container">
     <h2 class="mb-4">Result</h2>
+    
+    <!-- Display Calculation Result -->
     <p class="lead">{{ result }}</p>
 
+    <!-- Display Stock Chart if available -->
     {% if image %}
-      <img src="{{ url_for('static', filename=image) }}" class="img-fluid mt-3" />
+      <img src="{{ url_for('static', filename=image) }}" class="img-fluid mt-3" alt="Stock Chart" />
     {% endif %}
- 
-    <br>
-    <a href="/" class="btn btn-secondary mt-3">Back to Home</a>
+
+    <!-- Display Stock Prediction Table if available -->
+    {% if predictions %}
+      <h4 class="mt-4">📈 Predicted Stock Prices for the Next 7 Days</h4>
+      <table class="table table-bordered mt-3">
+        <thead class="table-dark">
+          <tr>
+            <th>Date</th>
+            <th>Predicted Price (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for date, price in predictions.items() %}
+          <tr>
+            <td>{{ date }}</td>
+            <td>₹{{ "%.2f"|format(price) }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% endif %}
+
+    <!-- Back to Home Button -->
+    <a href="/" class="btn btn-secondary mt-4">Back to Home</a>
   </div>
 </body>
 </html>
