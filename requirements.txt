@@ -3,3 +3,4 @@ Flask
 matplotlib
 yfinance
 gunicorn
+scikit-learn
